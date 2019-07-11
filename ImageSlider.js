@@ -252,7 +252,8 @@ class ImageSlider extends Component<PropsType, StateType> {
           horizontal={true}
           scrollEnabled={scrollEnabled}
           showsHorizontalScrollIndicator={false}
-          style={[styles.scrollViewContainer, scrollStyle]}
+          style={[styles.scrollViewContainer]}
+          contentContainerStyle={[scrollStyle]}
         >
           {loopBothSides && this._renderImage(images[images.length - 1], -1)}
           {images.map(this._renderImage)}

@@ -26,6 +26,7 @@ type Slide = {
 type PropsType = {
   images: Array<number | string>,
   style?: any,
+  scrollStyle?: any,
   loop?: boolean,
   loopBothSides?: boolean,
   autoPlayWithInterval?: number,
@@ -230,6 +231,7 @@ class ImageSlider extends Component<PropsType, StateType> {
       onPress,
       customButtons,
       style,
+      scrollStyle,
       loop,
       images,
       loopBothSides,
@@ -250,7 +252,7 @@ class ImageSlider extends Component<PropsType, StateType> {
           horizontal={true}
           scrollEnabled={scrollEnabled}
           showsHorizontalScrollIndicator={false}
-          style={[styles.scrollViewContainer, style]}
+          style={[styles.scrollViewContainer, scrollStyle]}
         >
           {loopBothSides && this._renderImage(images[images.length - 1], -1)}
           {images.map(this._renderImage)}
